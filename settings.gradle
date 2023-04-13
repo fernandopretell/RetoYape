@@ -1,0 +1,5 @@
+
+rootProject.name = "RetoYape"
+include ':app'
+include ':core'
+include ':base_ui'

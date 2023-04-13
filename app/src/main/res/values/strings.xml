@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RetoYape</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="discounts_gps_unavailable_message">Debes activar tu GPS para poder visualizar los establecimientos más cercanos a tu posición.</string>
+    <string name="discounts_location_permission_message">Debes autorizar el acceso de la localización en la aplicación para visualizar los establecimientos más cercanos a tu posición.</string>
+    <string name="exception_airplane_mode_off">En este momento no cuentas con conexión a internet. Por favor, inténtalo más tarde.</string>
+</resources>

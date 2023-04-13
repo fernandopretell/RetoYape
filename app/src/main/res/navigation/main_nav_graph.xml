@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_graph.xml"
+    app:startDestination="@id/recipeListFragment">
+    <fragment
+        android:id="@+id/recipeListFragment"
+        android:name="com.fulbiopretell.retoyape.ui.fragment.RecipeListFragment"
+        android:label="RecipeListFragment" >
+        <action
+            android:id="@+id/action_recipeListFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeDetailFragment"
+        android:name="com.fulbiopretell.retoyape.ui.fragment.RecipeDetailFragment"
+        android:label="fragment_recipe_detail"
+        tools:layout="@layout/fragment_recipe_detail" >
+        <action
+            android:id="@+id/action_recipeDetailFragment_to_mapScreenFragment"
+            app:destination="@id/mapScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapScreenFragment"
+        android:name="com.fulbiopretell.retoyape.ui.fragment.MapScreenFragment"
+        android:label="fragment_map_screen"
+        tools:layout="@layout/fragment_map_screen" />
+</navigation>

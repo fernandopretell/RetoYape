@@ -1,0 +1,61 @@
+import com.fulbiopretell.retoyape.Deps
+import com.fulbiopretell.retoyape.Versions
+import com.fulbiopretell.retoyape.Config
+
+plugins {
+    id("com.android.library")
+    id("kotlin-android")
+    id("kotlin-android-extensions")
+    id("kotlin-kapt")
+}
+
+android {
+    compileSdkVersion Versions.Android.compileSdkVersion
+    namespace Config.packageNameBaseUi
+
+    defaultConfig {
+        minSdkVersion Versions.Android.minSdkVersion
+        targetSdkVersion Versions.Android.targetSdkVersion
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    api project(":core")
+
+    api Deps.kotlin
+    api Deps.Android.appCompat
+    api Deps.Android.androidKTX
+    api Deps.Android.constraintLayout
+    api Deps.Android.material
+    api Deps.Libs.gson
+    api Deps.Libs.dynamicanimation
+
+
+    api Deps.Libs.glide
+    kapt Deps.Libs.glideCompiler
+    api Deps.Libs.glideOkHttp3
+
+    api Deps.Android.work
+
+    testImplementation Deps.Test.junit
+}
