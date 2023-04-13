@@ -3,7 +3,9 @@ package com.fulbiopretell.retoyape.ui.fragment
 import android.annotation.SuppressLint
 import android.location.Location
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.fulbiopretell.retoyape.R
 import com.fulbiopretell.retoyape.base.viewBinding
@@ -19,15 +21,21 @@ import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
 
 
-class MapScreenFragment : Fragment(R.layout.fragment_map_screen), LocationController.LocationControllerListener, OnMapReadyCallback {
-
-    private val binding by viewBinding(FragmentMapScreenBinding::bind)
+class MapScreenFragment : Fragment(), LocationController.LocationControllerListener, OnMapReadyCallback {
 
     private var mMap: GoogleMap? = null
     private var queryLocation: Location? = null
     private var locationController: LocationController? = null
     private var latitude: Double? = null
     private var longitude: Double? = null
+
+    private val binding by lazy {
+        FragmentMapScreenBinding.inflate(LayoutInflater.from(activity), null, false)
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        return binding.root
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
